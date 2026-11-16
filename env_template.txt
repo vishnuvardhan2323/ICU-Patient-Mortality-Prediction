@@ -1,0 +1,93 @@
+# ============================================================
+# ICU Patient Mortality Risk Prediction - Environment Template
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Project
+# ------------------------------------------------------------
+
+PROJECT_ROOT="absolute/path/to/ICU_Patient_Predict_Risk_Analysis"
+
+APP_NAME="ICU Patient Mortality Risk Prediction"
+ENVIRONMENT="development"
+
+
+# ------------------------------------------------------------
+# Logging
+# ------------------------------------------------------------
+
+LOG_PATH="${PROJECT_ROOT}/logs/app.log"
+
+
+# ------------------------------------------------------------
+# Raw datasets
+# ------------------------------------------------------------
+
+PATIENT_DATASET_PATH="${PROJECT_ROOT}/dataset/patient.csv"
+
+VITAL_DATASET_PATH="${PROJECT_ROOT}/dataset/vitalPeriodic.csv"
+
+LAB_DATASET_PATH="${PROJECT_ROOT}/dataset/lab.csv"
+
+
+# ------------------------------------------------------------
+# Final merged dataset
+# Patient + first-24h Vitals + first-24h Labs
+# ------------------------------------------------------------
+
+FINAL_PREPROCESSED_RAW_PATH="${PROJECT_ROOT}/final_preprocessed_raw.csv"
+
+
+# ------------------------------------------------------------
+# Final model files
+# ------------------------------------------------------------
+
+FINAL_MODEL_PATH="${PROJECT_ROOT}/model_dir/final_icu_mortality_model.pkl"
+
+PREPROCESSOR_PATH="${PROJECT_ROOT}/model_dir/preprocessor.pkl"
+
+XGB_MODEL_PATH="${PROJECT_ROOT}/model_dir/xgb_best_model.pkl"
+
+
+# ------------------------------------------------------------
+# Training / Evaluation artifacts
+# ------------------------------------------------------------
+
+X_TRAIN_PROCESSED_PATH="${PROJECT_ROOT}/model_dir/artifacts_dir/X_train_processed.pkl"
+
+X_TEST_PROCESSED_PATH="${PROJECT_ROOT}/model_dir/artifacts_dir/X_test_processed.pkl"
+
+X_TEST_RAW_PATH="${PROJECT_ROOT}/model_dir/artifacts_dir/X_test_raw.pkl"
+
+Y_TRAIN_PATH="${PROJECT_ROOT}/model_dir/artifacts_dir/y_train.pkl"
+
+Y_TEST_PATH="${PROJECT_ROOT}/model_dir/artifacts_dir/y_test.pkl"
+
+
+# ------------------------------------------------------------
+# Machine Learning configuration
+# ------------------------------------------------------------
+
+TARGET_COL="hospitaldischargestatus"
+
+MORTALITY_THRESHOLD=0.35
+
+TEST_SIZE=0.20
+
+RANDOM_STATE=42
+
+
+# ------------------------------------------------------------
+# FastAPI configuration
+# ------------------------------------------------------------
+
+API_HOST="127.0.0.1"
+
+API_PORT=8000
+
+API_PREFIX="/api"
+
+PREDICTION_ENDPOINT="/predict"
+
+API_URL="http://127.0.0.1:8000/api/predict"

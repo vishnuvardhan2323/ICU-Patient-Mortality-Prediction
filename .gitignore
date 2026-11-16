@@ -1,0 +1,64 @@
+
+# =====================================
+# 1. Virtual Environments
+# =====================================
+.venv/
+venv/
+env/
+
+# =====================================
+# 2. Environment Variables and Secrets
+# =====================================
+.env
+.env.*
+!.env.example
+
+# =====================================
+# 3. Python Cache Files
+# =====================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =====================================
+# 4. Jupyter Temporary Files
+# =====================================
+.ipynb_checkpoints/
+
+# Temporary notebooks - review before publishing
+TEMPORARY.ipynb
+xxxxx.ipynb
+
+# =====================================
+# 5. IDE and Operating System Files
+# =====================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# =====================================
+# 6. Raw Dataset Files
+# =====================================
+dataset/
+
+# Derived patient-level datasets
+/final_preprocessed_raw.csv
+/notebooks_dir/final_preprocessed_raw.csv
+
+# =====================================
+# 7. Model Training Artifacts
+# =====================================
+/model_dir/artifacts_dir/
+
+# Ignore other model files until their usage is verified
+/model_dir/*.pkl
+!/model_dir/deployment_icu_mortality_model.pkl
+
+# =====================================
+# 8. Project Temporary Files
+# =====================================
+project_structure.txt
+
+# Personal project understanding notes
+/docs/
